@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2023_02_10_151926) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "label", null: false
+    t.string "label", default: "指定しない", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

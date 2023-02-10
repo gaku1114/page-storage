@@ -1,1 +1,42 @@
 <%= render "shared/header"%>
+
+<div class="new-page-main">
+  <%= form_with model: @page, local: true do |f| %>
+    <div class="new-page-form">
+      <div class="new-page-headline">
+        新規作成
+      </div>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <%# URL %>
+      <div class="form-wrapper">
+        <div class="weight-bold-text">
+          URL
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :url, class:"page-url", placeholder:"保存したいページのURLをペーストしてください" %>
+
+      <%# タイトル %>
+      <div class="form-wrapper">
+        <div class="weight-bold-text">
+          タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"page-title", placeholder:"ページのタイトルをカスタマイズできます" %>
+
+      <%# カテゴリー %>
+      <div class="form-wrapper">
+        <div class="weight-bold-text">
+          カテゴリーでグループ分けする
+        </div>
+        <%= f.collection_select(:category_id, Category.where(user_id: current_user.id), :id, :name, {}, {class:"select-box", id:"page_category"}) %> 
+        <%= link_to '新しいカテゴリーを作成する', '/', class:"visit-category-new-page" %>
+      </div>
+
+      <%# ボタン %>
+      <div class="page-save-btn-wrapper">
+        <%= f.submit "保存する" ,class:"page-save-btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
