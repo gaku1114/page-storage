@@ -2,7 +2,7 @@
 
 | Column             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
-| nickname           | string  | null: false               |
+| name               | string  | null: false               |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
 
@@ -24,9 +24,8 @@
 
 # categoriesテーブル
 
-| Column  | Type       |                                |
-| ------- | ---------- | ------------------------------ |
-| name    | string     | null: false                    |
-| page_id | references | null: false, foreign_key: true |
+| Column   | Type       |                                |
+| -------- | ---------- | ------------------------------ |
+| label    | string     | null: false                    |
 
 - has_many :pages
