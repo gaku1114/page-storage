@@ -4,7 +4,7 @@ class CreatePages < ActiveRecord::Migration[6.0]
       t.string     :title,    null: false
       t.string     :url,      null: false
       t.references :user,     null: false, foreign_key: true 
-      t.references :category, null: false, foreign_key: true 
+      t.references :category
       t.timestamps
     end
   end

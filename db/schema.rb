@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2023_02_10_151926) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "label", default: "指定しない", null: false
+    t.string "label", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2023_02_10_151926) do
     t.string "title", null: false
     t.string "url", null: false
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_pages_on_category_id"
@@ -45,6 +45,5 @@ ActiveRecord::Schema.define(version: 2023_02_10_151926) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "pages", "categories"
   add_foreign_key "pages", "users"
 end
