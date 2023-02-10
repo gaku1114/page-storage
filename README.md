@@ -1,24 +1,32 @@
-# README
+# usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
 
-Things you may want to cover:
+- has_many :pages
 
-* Ruby version
 
-* System dependencies
+# pagesテーブル
 
-* Configuration
+| Column      | Type       | Options                         |
+| ----------- | ---------- | ------------------------------- |
+| title       | string     | null: false                     |
+| url         | string     | null: false                     |
+| user_id     | references | null: false,  foreign_key: true |
+| category_id | references | null: false,  foreign_key: true |
 
-* Database creation
+- belongs_to :user
+- belongs_to :category
 
-* Database initialization
 
-* How to run the test suite
+# categoriesテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column  | Type       |                                |
+| ------- | ---------- | ------------------------------ |
+| name    | string     | null: false                    |
+| page_id | references | null: false, foreign_key: true |
 
-* Deployment instructions
-
-* ...
+- has_many :pages
