@@ -8,7 +8,7 @@
   min-width: 990px;
   display: flex;
   justify-content: space-between;
-  background-color: #222222;
+  border-bottom: 1px solid #222222;
 }
 
 .search-bar-contents {
@@ -19,55 +19,51 @@
 
 .header-rogo {
   width: 150px;
-  height: 50px;
-  margin: 0 70px;
+  height: 45px;
+  margin: 0 80px;
 }
 
 .nav {
   font-size: 18px;
-  flex-wrap: wrap;
+  padding: 20px 70px 0 0;
 }
 
 .header-lists {
   display: flex;
+  align-items: center;
   list-style: none;
-  align-items: flex-end;
-  margin: 38px 80px 0 0;
+}
+
+.puls-btn {
+  margin-right: 4vw;
+  margin-top: 5px;
 }
 
 .user-name {
   text-decoration: none;
   margin-right: 2vw;
-  color: white;
+  color: #222222;
   padding: 10px;
 }
-
 
 .logout {
   text-decoration: none;
   margin-right: 2vw;
-  color: white;
+  color: #222222;
   padding: 10px;
-}
-
-.new-btn {
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-  font-weight: bold;
 }
 
 .login {
   text-decoration: none;
   margin-right: 2vw;
-  color: white;
+  color: #222222;
   font-weight: bold;
   padding: 10px;
 }
 
 .sign-up {
   text-decoration: none;
-  color: white;
+  color: #222222;
   font-weight: bold;
   padding: 10px;
 }

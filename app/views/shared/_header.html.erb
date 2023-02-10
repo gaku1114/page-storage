@@ -5,10 +5,10 @@
   </div>
   <div class='nav'>
     <ul class='header-lists'>
-      <%if user_signed_in? %>
-        <li><%= link_to current_user.name, "#", class: "user-nickname" %> </li> 
+      <% if user_signed_in? %>
+        <li><%= link_to image_tag("puls.png", class:"puls-btn"), new_page_path %>
+        <li><%= link_to current_user.name, "#", class: "user-name" %> </li> 
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
-        <li><%= link_to '質問する', new_question_path, class: "new-btn" %></li>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
