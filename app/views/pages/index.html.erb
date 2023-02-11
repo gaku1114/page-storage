@@ -1,1 +1,22 @@
 <%= render "shared/header"%>
+
+<div class="page-index">
+
+  <%# サイドバー %>
+  <div class="index-sidebar">
+    <% current_user.categories.each do |category| %>
+      <div class="category-label-wrapper">
+        <%= link_to category.label, '/', class:'category-label' %>
+      </div>
+    <% end %>
+  </div>
+
+  <%# メイン %>
+  <div class="index-main">
+    <% current_user.pages.each do |page| %>
+      <div class="page-link-wrappeer">
+        <%= link_to page.title, page.url, class:'page-link' %>
+      </div>
+    <% end %>
+  </div>
+</div>

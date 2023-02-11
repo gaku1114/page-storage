@@ -29,7 +29,10 @@
         <div class="weight-bold-text">
           カテゴリーでグループ分けする
         </div>
-        <%= f.collection_select(:category_id, Category.where(user_id: current_user.id), :id, :label, {}, {class:"select-box", id:"page_category"}) %> 
+
+        <% if Category.exists?(user_id: current_user.id) %>
+          <%= f.collection_select(:category_id, Category.find(user_id: current_user.id), :id, :label, {}, {class:"select-box", id:"page_category"}) %> 
+        <% end %>
         <%= link_to '新しいカテゴリーを作成する', '/', class:"visit-category-new-page" %>
       </div>
 
